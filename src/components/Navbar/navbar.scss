@@ -1,4 +1,4 @@
-@import '../../styles/variables';
+@import "../../styles/variables";
 
 nav {
   background-color: $lightgray;
@@ -11,6 +11,12 @@ nav {
   flex-direction: row;
   justify-content: space-between;
   box-shadow: $box-shadow;
+
+  // this means reference the parrent (& - in this case nav)
+  // and select any direct descendents (> - in this case the a tag and the ul tag)
+  & > * {
+    padding: 0 20px;
+  }
 
   .brand-logo {
     @include default-font(2em);
@@ -27,8 +33,6 @@ nav {
     li {
       @include default-font(15px);
       padding: 1.5px 10px;
-      color: white;
-      
     }
 
     li:hover {
